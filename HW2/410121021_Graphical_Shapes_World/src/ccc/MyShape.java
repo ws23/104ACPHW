@@ -66,9 +66,13 @@ public abstract class MyShape implements IShapeAnalyzer {
 
 	@Override
 	public boolean collide(MyShape s) {
-		// Implement this by your self.
-		collided = false; 
-		return false;
+		Area s1 = new Area(this.getShape()); 
+		Area s2 = new Area(s.getShape()); 
+		
+		s1.intersect(s2);
+		collided = s1.isEmpty(); 
+		
+		return !collided;
 	}
 
 }

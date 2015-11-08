@@ -26,7 +26,8 @@ public class ShapeWorld {
 			int n_vertices = (int) (Math.random() * 1000) % 20 + 3;
 			int x = (int) (WIDTH * Math.random()); 	// x-coordinate of shape center 
 			int y = (int) (HEIGHT * Math.random()); // x-coordinate of shape center
-			int type = (int) (Math.random() * 1000) % 2; // 0: ellipse, 1: star, others: external shape
+			//int type = (int) (Math.random() * 1000) % 3; // 0: ellipse, 1: star, others: external shape
+			int type = 2; 
 			MyShape s;
 			if (type == 0) {
 				int radius1 = (int) (WIDTH * 0.25 * Math.random()) + 20; // long axis of an ellipse
@@ -38,7 +39,8 @@ public class ShapeWorld {
 				s = new Star(x, y, n_vertices, radius);
 			}
 			else {
-				s = new XShape(); // call the constructor of your shape here
+				int size = (int) (WIDTH * 0.05 * Math.random()) + 5;
+				s = new XShape(x, y, size); // call the constructor of your shape here
 			}
 			Rectangle r = s.getShape().getBounds(); // bounding box of the shape
 			if (wnd_dim.contains(r)) { // test if it's inside the display window, and discard it if not
