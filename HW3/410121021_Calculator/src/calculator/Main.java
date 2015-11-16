@@ -19,7 +19,7 @@ public class Main {
 			// Display Panel
 		JPanel displayPanel = new JPanel(); 
 		displayPanel.setLayout(new GridBagLayout()); 
-		displayPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 0, 5)); 
+		displayPanel.setBorder(BorderFactory.createEmptyBorder(5, 7, 0, 7)); 
 			// Button Panel
 		JPanel btnPanel = new JPanel();
 		btnPanel.setLayout(new GridBagLayout()); 
@@ -28,8 +28,8 @@ public class Main {
 		
 		// Elements creation
 			// Display Area
-		JTextField inputField = new JTextField(); 
-		JTextField outputField = new JTextField(); 
+		JTextField inputField = new JTextField(2); 
+		JTextField outputField = new JTextField(5); 
 			// Button Area
 		JButton numBtns[] = new JButton[10];
 		for(int i=0; i<10; i++)
@@ -59,12 +59,15 @@ public class Main {
 			panelBags[i].fill = GridBagConstraints.BOTH; 
 			panelBags[i].anchor = GridBagConstraints.CENTER; 
 		} 
-		panelBags[0].ipady = 25; 
 		calculator.add(displayPanel, panelBags[0]);
-		panelBags[1].ipady = 0; 
 		calculator.add(btnPanel, panelBags[1]);
 			// Display Area
 		GridBagConstraints displayBags[] = new GridBagConstraints[2]; 
+		JTextField[] fields = { inputField, outputField };
+		Font[] fonts = {
+				new Font(Font.MONOSPACED, Font.PLAIN, 22),   
+				new Font(Font.MONOSPACED, Font.BOLD, 22)
+		}; 
 		for(int i=0; i<2; i++){
 			displayBags[i] = new GridBagConstraints(); 
 			displayBags[i].gridx = 0; 
@@ -72,12 +75,16 @@ public class Main {
 			displayBags[i].gridwidth = 1; 
 			displayBags[i].gridheight = 1; 
 			displayBags[i].weightx = 1; 
-			displayBags[i].weighty = 2; 
+			displayBags[i].weighty = 1; 
 			displayBags[i].fill = GridBagConstraints.BOTH; 
 			displayBags[i].anchor = GridBagConstraints.CENTER; 
-		}
-		displayPanel.add(inputField, displayBags[0]); 
-		displayPanel.add(outputField, displayBags[1]);
+			
+			fields[i].setFont(fonts[i]); 
+			fields[i].setHorizontalAlignment(JTextField.RIGHT); 
+			fields[i].setEditable(false); 
+			
+			displayPanel.add(fields[i], displayBags[i]); 
+		}	
 			// Button Area
 		GridBagConstraints btnBags[] = new GridBagConstraints[19];
 			/* arg[][0] = gridx,			  arg[][1] = gridy, 
@@ -100,14 +107,15 @@ public class Main {
 			btnBags[i] = new GridBagConstraints(); 
 			btnBags[i].gridx = arg[i][0]; 
 			btnBags[i].gridy = arg[i][1]; 
-			btnBags[i].ipady = 0;
 			btnBags[i].gridwidth = arg[i][2]; 
 			btnBags[i].gridheight = arg[i][3]; 
 			btnBags[i].weightx = 1; 
-			btnBags[i].weighty = 10; 
+			btnBags[i].weighty = 1; 
 			btnBags[i].fill = GridBagConstraints.BOTH; 
 			btnBags[i].anchor = GridBagConstraints.CENTER; 
-			btns[i].setFont(new Font("Sans", Font.BOLD, 20)); 
+			
+			btns[i].setFont(new Font(Font.MONOSPACED, Font.BOLD, 20)); 
+			
 			btnPanel.add(btns[i], btnBags[i]);
 		} 
 
