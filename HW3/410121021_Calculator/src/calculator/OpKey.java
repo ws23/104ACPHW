@@ -9,15 +9,15 @@ public abstract class OpKey extends Key{
 	public abstract double eval(); 
 	
 	public int getNumOfOperand(){
-		
+		return 0; 
 	}
 
 	public String getKeyName(){
-		
+		return ""; 
 	}
 	
 	public int getPrecedence(){
-		
+		return 0; 
 	}
 	
 	public void setOpmd(double[] arg0){

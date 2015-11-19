@@ -26,7 +26,7 @@ public class CalcPanel {
 	private ArrayList<Key> attribute = new ArrayList<>(); 
 	
 	protected KeyPad makeKeyPad(){
-		
+		return new KeyPad(); 
 	}
 	
 	public void actionPerformed(ActionEvent e){
@@ -34,11 +34,11 @@ public class CalcPanel {
 	}
 	
 	public double getResult(){
-		
+		return 0; 
 	}
 	
 	public String getExpression(){
-		
+		return ""; 
 	}
 	
 	public CalcPanel(){

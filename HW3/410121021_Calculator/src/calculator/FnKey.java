@@ -7,11 +7,11 @@ public class FnKey extends Key{
 	protected ImageIcon icon; 
 	
 	public String getKeyName(){
-		
+		return ""; 
 	} 
 	
 	public ImageIcon getIcon(){
-		
+		return new ImageIcon(); 
 	}
 	
 	public FnKey(String s, ImageIcon icn){

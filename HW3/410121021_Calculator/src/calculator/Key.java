@@ -11,15 +11,15 @@ public class Key {
 	public Key me; 
 	
 	public String getKeyName(){
-		
+		return ""; 
 	}
 	
 	public GridBagConstraints getGBC(){
-		
+		return new GridBagConstraints(); 
 	}
 	
 	public String getName(){
-	
+		return ""; 
 	}
 	
 	public Key(){
