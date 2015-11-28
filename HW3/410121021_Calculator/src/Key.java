@@ -1,5 +1,3 @@
-package calculator;
-
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 

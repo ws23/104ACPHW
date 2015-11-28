@@ -1,5 +1,3 @@
-package calculator;
-
 public abstract class OpKey extends Key{
 	protected String name; 
 	protected int precedence; 

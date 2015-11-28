@@ -60,7 +60,8 @@ public class Main {
 			panelBags[i].anchor = GridBagConstraints.CENTER; 
 		} 
 		calculator.add(displayPanel, panelBags[0]);
-		calculator.add(btnPanel, panelBags[1]);
+		calculator.add(btnPanel, panelBags[1]); 
+		
 			// Display Area
 		GridBagConstraints displayBags[] = new GridBagConstraints[2]; 
 		JTextField[] fields = { inputField, outputField };

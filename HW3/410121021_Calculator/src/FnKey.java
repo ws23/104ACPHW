@@ -1,5 +1,3 @@
-package calculator;
-
 import javax.swing.ImageIcon;
 
 public class FnKey extends Key{

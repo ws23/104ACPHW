@@ -1,5 +1,3 @@
-package calculator;
-
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
